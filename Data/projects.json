@@ -28,6 +28,19 @@
         "year": "2022"
     },
     {
+        "title": "Midnight Delivery",
+        "role": "Tech Lead/Quality Advocate",
+        "genre": "Adventure",
+        "background": "Images/Backgrounds/MidnightDelivery.png",
+        "description": "A mysterious vendor sells you your dream house-but you've been swindled! Play as Tau the witch, exploring an island of wacky characters, brewing potions and completing quests to rebuild your run-down home!",
+        "overlayImageSrc": "Images/Unreal.png",
+        "imageSrc": "Images/Thumbnails/MidnightDelivery.png",
+        "video": "Videos/MidnightDelivery.mp4",
+        "projectLink": "https://games.digipen.edu/",
+        "carousel": "Games",
+        "year": "2022"
+    },
+    {
         "title": "Koko: The Last Leaf",
         "role": "Composer",
         "logo": "",
