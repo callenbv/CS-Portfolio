@@ -36,6 +36,7 @@
   margin: 0 -3px; /* Add some space between buttons */
   color: #f3f2f2b0; /* Text color */
   padding: 3vh 2.4vw; /* Increased padding to match text position and create proper hover area */
+  letter-spacing: 0.015em;
   text-decoration: none; /* No underline on links */
   transition: background-color 0.2s, color 0.2s, transform 0.3s ease; /* Smooth transition for hover effect */
   line-height: 1; /* Ensure consistent vertical alignment */

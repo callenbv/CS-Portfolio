@@ -365,6 +365,22 @@ body {
   display: block;
 }
 
+.about-image.wide-image {
+  flex-basis: min(42vw, 520px);
+  align-self: center;
+}
+
+.about-image.wide-image img {
+  width: 100%;
+  height: auto;
+  max-height: 340px;
+  object-position: center;
+}
+
+.jysep-row {
+  align-items: center;
+}
+
 .about-text {
   flex: 1;
 }
@@ -414,6 +430,15 @@ body {
     flex: 0 0 250px;
     height: 250px;
     width: 100%;
+  }
+
+  .about-image.wide-image {
+    flex: 0 0 auto;
+    align-self: center;
+  }
+
+  .about-image.wide-image img {
+    max-height: 250px;
   }
   
   .about-text h3 {
