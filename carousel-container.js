@@ -684,13 +684,18 @@ function startVideo(activeSlide)
             // Create video element if it doesn't exist
             videoSource = document.createElement('video');
             videoSource.id = 'video';
+            videoSource.preload = 'auto';
+            videoSource.playsInline = true;
             player.appendChild(videoSource);
         }
 
         // if the video is an in-page video, load custom video player
         // don't auto-play here; this launcher is optional per your last request
         videoSource.poster = activeSlide?.dataset?.imageSrc || '';
-        videoSource.src = videoPath;
+        if (videoSource.src !== new URL(videoPath, window.location.href).href) {
+            videoSource.src = videoPath;
+            videoSource.load();
+        }
         videoOverlay.style.display = 'flex';
         
         let closeButton = player.querySelector('.close-btn');
@@ -709,7 +714,6 @@ function startVideo(activeSlide)
 
         controls.style.display = 'flex';
         videoSource.style.display = 'block';
-        videoSource.load();
     }
 }
 

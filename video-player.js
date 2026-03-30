@@ -5,12 +5,46 @@ document.addEventListener("DOMContentLoaded", function() {
     const muteToggleButton = document.getElementById('muteToggle');
     const fullScreenButton = document.getElementById('fullScreen');
 
-    video.addEventListener('timeupdate', function() {
+    let isScrubbing = false;
+    let wasPlayingBeforeScrub = false;
+
+    function updateSeekbar() {
+        if (!video.duration || isScrubbing) return;
         seekbar.value = (video.currentTime / video.duration) * 100;
+    }
+
+    function commitSeek() {
+        if (!video.duration) return;
+        const nextTime = (Number(seekbar.value) * video.duration) / 100;
+        video.currentTime = nextTime;
+        if (wasPlayingBeforeScrub) {
+            video.play().catch(() => {});
+        }
+    }
+
+    video.addEventListener('timeupdate', updateSeekbar);
+
+    seekbar.addEventListener('pointerdown', function() {
+        isScrubbing = true;
+        wasPlayingBeforeScrub = !video.paused;
+        video.pause();
     });
 
     seekbar.addEventListener('input', function() {
-        video.currentTime = (seekbar.value * video.duration) / 100;
+        if (!video.duration) return;
+        // Keep the UI responsive while dragging, but don't force repeated seeks.
+        const previewTime = (Number(seekbar.value) * video.duration) / 100;
+        seekbar.setAttribute('aria-valuetext', `${Math.round(previewTime)} seconds`);
+    });
+
+    seekbar.addEventListener('change', function() {
+        commitSeek();
+        isScrubbing = false;
+    });
+
+    seekbar.addEventListener('pointerup', function() {
+        commitSeek();
+        isScrubbing = false;
     });
 
     video.addEventListener('loadedmetadata', function() {
