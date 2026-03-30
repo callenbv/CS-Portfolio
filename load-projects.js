@@ -20,7 +20,9 @@ function createCarouselSlide(item) {
     imageContainer.dataset.projectLink = item.projectLink;
     imageContainer.dataset.genre = item.genre;
     imageContainer.dataset.role = item.role;
+    imageContainer.dataset.engine = item.engine;
     imageContainer.dataset.background = item.background;
+    imageContainer.dataset.screenshots = JSON.stringify(item.screenshots || []);
     imageContainer.dataset.logo = item.logo;
     imageContainer.dataset.video = item.video;
     imageContainer.dataset.year = item.year;
@@ -63,6 +65,33 @@ function createCarouselSlide(item) {
     } else {
         carouselSlide.appendChild(imageContainer);
     }
+}
+
+function getProjectLinkLabel(link) {
+    if (!link) return 'View Project';
+
+    const normalizedLink = String(link).toLowerCase();
+
+    if (normalizedLink.includes('youtube.com') || normalizedLink.includes('youtu.be')) {
+        return 'View on YouTube';
+    }
+    if (normalizedLink.includes('steampowered.com') || normalizedLink.includes('steamcommunity.com')) {
+        return 'View on Steam';
+    }
+    if (normalizedLink.includes('github.com')) {
+        return 'View on GitHub';
+    }
+    if (normalizedLink.includes('itch.io')) {
+        return 'View on itch.io';
+    }
+
+    return 'View Project';
+}
+
+function hasProjectLink(link) {
+    if (link === null || link === undefined) return false;
+    const normalizedLink = String(link).trim();
+    return normalizedLink !== '' && normalizedLink.toLowerCase() !== 'undefined';
 }
 
 function initializeCarousels() {
@@ -124,7 +153,7 @@ function updateActiveSlideDisplay(carouselId) {
     const description = activeSlide.dataset.description;  // Assuming description is also stored
 
     const titleElement = document.querySelector('.game-text-container h1');
-    const descriptionElement = document.querySelector('.game-text-container p');
+    const descriptionElement = document.querySelector('.game-text-container .game-description');
     
     titleElement.textContent = title;
 
@@ -133,12 +162,15 @@ function updateActiveSlideDisplay(carouselId) {
         const title = activeSlide.dataset.title;
         const description = activeSlide.dataset.description;
         const year = activeSlide.dataset.year;
+        const engine = activeSlide.dataset.engine;
 
         const titleElement = document.querySelector('.game-text-container h1');
-        const descriptionElement = document.querySelector('.game-text-container p');
+        const descriptionElement = document.querySelector('.game-text-container .game-description');
         const imageOverlayElement = document.querySelector('.game-text-container .slide-icon');
-        const imageSrcElement = document.querySelector('.slideshow-container .slide img');
-        const linkElement = document.querySelector('.game-text-container .game-text-link a');
+        const primaryHeroImage = document.querySelector('.hero-image-primary');
+        const secondaryHeroImage = document.querySelector('.hero-image-secondary');
+        const mainSlideElement = document.getElementById('mainImage');
+        const linkElement = document.querySelector('.game-text-container .game-text-link');
         const roleElement = document.querySelector('.game-text-container .game-text-role');
 
         titleElement.textContent = title;
@@ -151,20 +183,41 @@ function updateActiveSlideDisplay(carouselId) {
         {
             roleElement.textContent += " ("+year+")";
         }
+
+        if (engine && engine !== 'undefined' && String(engine).trim() !== '') {
+            roleElement.textContent += ", " + engine;
+        }
         
         // add a link to the official project page
-        linkElement.href = activeSlide.dataset.projectLink;
+        const projectLink = activeSlide.dataset.projectLink;
+        if (hasProjectLink(projectLink)) {
+            linkElement.href = projectLink;
+            linkElement.textContent = getProjectLinkLabel(projectLink);
+            linkElement.style.display = 'inline-block';
+        } else {
+            linkElement.removeAttribute('href');
+            linkElement.textContent = '';
+            linkElement.style.display = 'none';
+        }
 
         // set the slide image based on whether we have a logo or background
-        const background = activeSlide.dataset.background;
-        if (background)
-        {
-            imageSrcElement.src = background;
+        const screenshotList = JSON.parse(activeSlide.dataset.screenshots || '[]').filter(Boolean);
+        const initialHeroImage = screenshotList[0] || activeSlide.dataset.background || activeSlide.dataset.imageSrc;
+
+        if (initialHeroImage) {
+            if (primaryHeroImage) primaryHeroImage.src = initialHeroImage;
+            if (secondaryHeroImage) secondaryHeroImage.src = initialHeroImage;
         }
-        else
-        {
-            // default to the thumbnail
-            imageSrcElement.src = activeSlide.dataset.imageSrc;
+
+        if (mainSlideElement) {
+            mainSlideElement.dataset.activeImage = 'primary';
+            mainSlideElement.classList.remove('is-crossfading');
+            mainSlideElement.classList.remove('is-previewing');
+            mainSlideElement.classList.remove('yt-visible');
+        }
+
+        if (typeof activeHeroImageSlot !== 'undefined') {
+            activeHeroImageSlot = 'primary';
         }
 
         // add a youtube link if it exists

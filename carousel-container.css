@@ -26,11 +26,11 @@
     cursor: pointer;
     flex-shrink: 0;
     transform: translateY(2%) scale(1);
-    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     padding: 0.25vw; /* thinner frame so grey background is smaller */
     border-radius: 20px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
-    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(12, 14, 18, 0.92);
+    border: 1px solid rgba(255,255,255,0.08);
     box-shadow: 0 10px 24px rgba(0,0,0,0.3);
     box-sizing: border-box;
     overflow: hidden; /* ensure image aligns with card corners */
@@ -42,14 +42,14 @@
 /* Removed hover sheen overlay to avoid white animation sweep */
 
 .image-container:hover {
-    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     transform: translateY(0%) scale(1.1);
-    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
-    border-color: rgba(255,255,255,0.28);
+    border-color: rgba(255,255,255,0.18);
     box-shadow: 0 16px 36px rgba(0,0,0,0.38);
 }
 .image-container.active {
     border-color: rgba(255, 210, 11, 0.6);
+    background: rgba(12, 14, 18, 0.98);
 }
 
 .image-container:active {
@@ -112,7 +112,7 @@
     border: 0; /* avoid inner outline; card provides the frame */
     transition: 0.3s;
     box-shadow: 0 22px 70px rgba(0, 0, 0, 0.85), 0 0 0 2px rgba(255, 255, 255, 0.08) inset;
-    filter: saturate(1.15) contrast(1.08) brightness(1.06);
+    filter: none;
 }
 
 /* Removed accent ring to avoid double outlines/purple tint */
@@ -186,7 +186,7 @@
 /* Active (click) effect */
 .prev:active, .next:active {
     transform: scale(0.9);
-    color: rgb(108, 40, 175);
+    color: rgb(255, 210, 11);
     background-color: rgba(0,0,0,0.9); /* Even darker when active */
 }
 

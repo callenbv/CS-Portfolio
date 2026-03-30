@@ -88,18 +88,24 @@
     <div class="game-text-container">
       <h1></h1>
       <div class = "game-text-role">Developer</div>
+      <p class="game-description"></p>
       <p>
-        <a href="" target = "_blank"><div class="game-text-link">Go to project</div></a>
+        <a href="" target="_blank" class="game-text-link">View Project</a>
       </p>
       <img src="Images/Steam.png" class="slide-icon" alt="Icon Description">
     </div>
 
     <div class="slideshow-container">
-        <div class="slide" id="mainImage">
-          <img src="Images/Thumbnails/Earthward.png" alt="Slideshow Image">
-          <video id="heroPreview" muted playsinline preload="metadata"></video>
-          <iframe id="heroPreviewYT" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
+        <button class="hero-media-nav hero-media-prev" id="heroMediaPrev" type="button" aria-label="Previous media">&#10094;</button>
+        <div class="slide" id="mainImage" data-active-image="primary">
+            <img src="Images/Thumbnails/Earthward.png" alt="Slideshow Image" class="hero-image hero-image-primary">
+            <img src="Images/Thumbnails/Earthward.png" alt="" class="hero-image hero-image-secondary" aria-hidden="true">
+            <video id="heroPreview" muted playsinline preload="metadata"></video>
+            <iframe id="heroPreviewYT" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="hero-media-comment" id="heroMediaComment"></div>
+            <div class="hero-media-counter" id="heroMediaCounter">1/1</div>
+          </div>
+        <button class="hero-media-nav hero-media-next" id="heroMediaNext" type="button" aria-label="Next media">&#10095;</button>
     </div>
     
     <button class="player-button" id = "playButton">

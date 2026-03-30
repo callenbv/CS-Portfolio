@@ -2,10 +2,10 @@
 .game-text-container {
     position: fixed;
     margin-top: 5vh;
-    margin-left: 6vw;
+    margin-left: 4vw;
     width: 100%;
     font-family: "Arial";
-    max-width: 33%;
+    max-width: 40%;
     font-size: calc(0.4vw + 0.4vh + .55vmin);
 }
 
@@ -15,7 +15,7 @@
 }
 
 .game-text-container p {
-    width: 35vw;
+    width: 41vw;
     white-space: normal;
     word-wrap: break-word;
     letter-spacing: 0.025em;
@@ -32,7 +32,7 @@ h1 {
 h1::after {
     content: '';
     position: fixed;
-    left: 6vw; /* Extend the line to the left */
+    left: 4vw; /* Align underline with updated text column */
     height: .25vh;
     top: 16.5vh;
     width: 30%;
@@ -41,32 +41,75 @@ h1::after {
 
 /* For the display images of the selected game (slideshow images) */
 .slideshow-container {
-    position: fixed;
-    left: 46vw;
+    position: absolute;
+    top: 4vh;
+    left: 50vw;
+    width: 43vw;
+    height: 50vh;
     overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .slide {
     position: relative;
-    width: 55vw;
-    height: 60vh;
-    margin-top: -3vh; /* moved from img so video can match exactly */
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+    overflow: hidden;
+    background: rgb(28, 28, 30);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
 }
 
-.slide img {
+.slide .hero-image {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: opacity 0.25s ease;
-    mask-image: linear-gradient(
-        to right, 
-        rgba(0, 0, 0, 0) 0%, 
-        rgba(0, 0, 0, 1) 15%, 
-        black 50%, 
-        rgba(0, 0, 0, 1) 90%, 
-        rgba(0, 0, 0, 0) 100%
-    );
+    transition: opacity 0.22s ease-in-out;
+    z-index: 0;
+    border-radius: inherit;
+}
+
+.slide .hero-image-secondary {
+    opacity: 0;
+}
+
+.slide[data-active-image="primary"] .hero-image-primary {
+    opacity: 1;
+}
+
+.slide[data-active-image="primary"] .hero-image-secondary {
+    opacity: 0;
+}
+
+.slide[data-active-image="secondary"] .hero-image-primary {
+    opacity: 0;
+}
+
+.slide[data-active-image="secondary"] .hero-image-secondary {
+    opacity: 1;
+}
+
+.slide.is-crossfading .hero-image-primary {
+    opacity: 0;
+}
+
+.slide.is-crossfading .hero-image-secondary {
+    opacity: 1;
+}
+
+.slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: 4;
 }
 
 #heroPreview {
@@ -80,14 +123,7 @@ h1::after {
     transition: opacity 0.25s ease;
     pointer-events: none;
     z-index: 1;
-    mask-image: linear-gradient(
-        to right, 
-        rgba(0, 0, 0, 0) 0%, 
-        rgba(0, 0, 0, 1) 15%, 
-        black 50%, 
-        rgba(0, 0, 0, 1) 90%, 
-        rgba(0, 0, 0, 0) 100%
-    );
+    border-radius: inherit;
 }
 
 #heroPreview.is-visible {
@@ -105,15 +141,7 @@ h1::after {
     pointer-events: none;
     border: none;
     z-index: 1;
-    /* emulate the same soft edges as the image */
-    mask-image: linear-gradient(
-        to right, 
-        rgba(0, 0, 0, 0) 0%, 
-        rgba(0, 0, 0, 1) 15%, 
-        black 50%, 
-        rgba(0, 0, 0, 1) 90%, 
-        rgba(0, 0, 0, 0) 100%
-    );
+    border-radius: inherit;
     /* Prevent focus and interaction to hide UI elements */
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -123,6 +151,97 @@ h1::after {
 
 #heroPreviewYT.is-visible {
     opacity: 1;
+}
+
+.hero-media-counter {
+    position: absolute;
+    inset: auto 16px 16px auto;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: rgba(245, 248, 251, 0.96);
+    background: rgba(5, 11, 19, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    z-index: 6;
+    max-width: calc(100% - 32px);
+    pointer-events: none;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+    white-space: nowrap;
+}
+
+.hero-media-comment {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    max-width: calc(100% - 120px);
+    padding: 0.45rem 0.7rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.35;
+    color: rgba(245, 248, 251, 0.96);
+    background: rgba(5, 11, 19, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    z-index: 6;
+    pointer-events: none;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+    opacity: 0;
+    transition: opacity 0.22s ease-in-out;
+}
+
+.hero-media-comment.has-comment {
+    opacity: 1;
+}
+
+.hero-media-comment.is-swapping {
+    opacity: 0;
+}
+
+.hero-media-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    padding: calc(0.72vw + 0.72vh - 0.36vmin);
+    line-height: 1;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5%;
+    background-color: rgba(0,0,0,0.45);
+    color: white;
+    font-size: calc(0.85vw + 0.85vh + .3vmin);
+    cursor: pointer;
+    z-index: 5;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    transition: transform 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.hero-media-nav:hover {
+    transform: translateY(-50%) scale(1.15);
+    color: #f0f0f0;
+    background-color: rgba(0,0,0,0.72);
+}
+
+.hero-media-nav:active {
+    transform: translateY(-50%) scale(0.94);
+    color: rgb(255, 210, 11);
+    background-color: rgba(0,0,0,0.9);
+}
+
+.hero-media-prev {
+    left: -1.8vw;
+}
+
+.hero-media-next {
+    right: -1.8vw;
 }
 
 /* Hide YouTube top-right chrome (Watch later/Share) with a subtle top gradient only while YT preview is visible */
@@ -139,7 +258,7 @@ h1::after {
 }
 
 /* When previewing, hide the underlying hero image */
-.slide.is-previewing img {
+.slide.is-previewing .hero-image {
     opacity: 0;
 }
 
@@ -154,8 +273,8 @@ h1::after {
 
 .player-button {
     position: fixed;
-    left: 33%;
-    top: 43%;
+    left: 35%;
+    top: 45%;
     width: 8vw;
     font-size: calc(0.5vw + 0.5vh + .5vmin);
     height: 6.5vh;
@@ -200,9 +319,14 @@ h1::after {
 
 /* Link to the game page or more information */
 .game-text-link {
+    display: inline-block;
     margin-top: 4vh;
     color:rgb(129, 129, 129);
-    text-decoration: none;
+    font-size: 0.95em;
+    line-height: 1.2;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.18em;
 }
 
 .titleWord {

@@ -4,53 +4,89 @@
         "role": "Developer",
         "logo": "",
         "background": "Images/Backgrounds/Earthward.png",
+        "screenshots": ["Images/Backgrounds/Earthward.png", 
+        {
+            "src": "Images/Screenshots/Earthward/Shader.png",
+            "comment": "Glow shader for fire (HLSL)"
+        }, 
+        "Images/Screenshots/Earthward/Worm.png", 
+        {
+            "src": "Images/Screenshots/Earthward/Earthward3.png", 
+            "comment": "Procedural World Generation tool in Unity"
+        },
+        "Images/Screenshots/Earthward/Earthward1.png", 
+        {
+            "src": "Images/Screenshots/Earthward/UI.png", 
+            "comment": "Character Selection UI with unlockable characters"
+        }
+        ],
         "genre": "Roguelike RPG",
-        "description": "Over one-hundred years ago, the surface was destroyed by a terrible evil, forcing surviving civilization underground. Explore a vast world filled to the brim with creatures and critters...but beware the various secrets lurking in the caves! Craft armor and weapons, fight powerful monsters, and reclaim the surface for all who dwell beneath it.",
-        "overlayImageSrc": "Images/Steam.png",
+        "description": "I led development across gameplay systems, content creation, and production for Earthward. My work included netcode, combat and progression systems, editor tooling, software tooling, and shader and materials programming that supported both the game's look and the team's iteration workflow.",
+        "overlayImageSrc": "Images/Unity.png",
         "imageSrc": "Images/Thumbnails/Earthward.png",
         "video": "Videos/Earthward2.mp4",
-        "projectLink": "https://www.youtube.com/watch?v=VL3dSbLk_OU&t=2s&ab_channel=RiptideDev",
         "carousel": "Games",
+        "engine": "Unity",
         "year": "2026"
-    },
-    {
-        "title": "Bitlands",
-        "role": "Developer",
-        "background": "Images/Backgrounds/Bitlands.png",
-        "logo": "Images/Logos/Bitlands.png",
-        "genre": "2D Action Platformer",
-        "description": "The Bitlands have plunged into chaos. As a rebel, you must explore a war-torn world to find and overthrow the corrupt king of the Bitlands. With the help of magical allies found along the way, you might just end up saving the world!",
-        "overlayImageSrc": "Images/Steam.png",
-        "imageSrc": "Images/Thumbnails/Bitlands.png",
-        "youtube": "BFfSXrTiDuo",
-        "projectLink": "https://store.steampowered.com/app/1881710/Bitlands/",
-        "carousel": "Games",
-        "year": "2022"
     },
     {
         "title": "Midnight Delivery",
         "role": "Tech Lead/Quality Advocate",
         "genre": "Adventure",
         "background": "Images/Backgrounds/MidnightDelivery.png",
-        "description": "A mysterious vendor sells you your dream house-but you've been swindled! Play as Tau the witch, exploring an island of wacky characters, brewing potions and completing quests to rebuild your run-down home!",
-        "overlayImageSrc": "Images/Unreal.png",
+        "screenshots": [
+        {
+            "src": "Images/Backgrounds/MidnightDelivery.png",
+            "comment": "Data-table driven quest and dialogue system"
+        },
+        {
+            "src": "Images/Screenshots/MidnightDelivery/1.png"
+        },
+        {
+            "src": "Images/Screenshots/MidnightDelivery/2.png",
+            "comment": "Potion-crafting minigame with inventory management"
+        },
+        {
+            "src": "Images/Screenshots/MidnightDelivery/3.png",
+            "comment": "Toon outline shader and depth-based water"
+        }
+    ],
+    "description": "As Tech Lead and Quality Advocate, I helped drive technical direction, production quality, and team reliability on Midnight Delivery. My work included physics and shader programming, creating the CI/CD pipeline in Jenkins, identifying and resolving quality issues, and helping keep the project stable and shippable across development.",
+    "overlayImageSrc": "Images/Unreal.png",
         "imageSrc": "Images/Thumbnails/MidnightDelivery.png",
         "video": "Videos/MidnightDelivery.mp4",
-        "projectLink": "https://games.digipen.edu/",
+        "engine": "Unreal Engine",
         "carousel": "Games",
         "year": "2025"
     },
     {
-        "title": "Koko: The Last Leaf",
-        "role": "Composer",
-        "logo": "",
-        "background": "Images/Backgrounds/Koko.png",
-        "genre": "2D Adventure Metroidvania",
-        "description": "Delve into a mysterious world of Gods and magic as the last of the leaf kind. Fight epic battles for revenge against evil forces. Explore fantastical lands inhabited with magical creatures and peculiar allies. Search for the realm of the Gods and stop them from making a grave mistake.",
+        "title": "Bitlands",
+        "role": "Developer",
+        "background": "Images/Backgrounds/Bitlands.png",
+        "screenshots": [
+            {
+                "src": "Images/Screenshots/Bitlands/3.png"
+            },
+            {
+                "src": "Images/Screenshots/Bitlands/2.png",
+                "comment": "Crystal Caverns level design"
+            },
+            {
+                "src": "Images/Screenshots/Bitlands/4.png",
+                "comment": "Badge collection, serialized and linked to Steam achievements"
+            },
+            {
+                "src": "Images/Screenshots/Bitlands/1.png"
+            }
+        ],
+        "logo": "Images/Logos/Bitlands.png",
+        "genre": "2D Action Platformer",
+        "description": "I was the sole developer on Bitlands, owning the project from implementation through shipping it on Steam. My work centered on building gameplay systems, solving technical problems, and turning the design vision into a polished player experience.",
         "overlayImageSrc": "Images/Steam.png",
-        "imageSrc": "Images/Thumbnails/Koko.png",
-        "youtube": "au8_BQRNIXA",
-        "projectLink": "https://store.steampowered.com/app/1967980/Koko_the_Last_Leaf/",
+        "imageSrc": "Images/Thumbnails/Bitlands.png",
+        "youtube": "BFfSXrTiDuo",
+        "engine": "GameMaker",
+        "projectLink": "https://store.steampowered.com/app/1881710/Bitlands/",
         "carousel": "Games",
         "year": "2022"
     },
@@ -59,7 +95,8 @@
         "role": "Programmer",
         "genre": "Top-Down Action",
         "background": "Images/Backgrounds/LilypadLowdown.png",
-        "description": "Play as Lilly the Frog, who wants nothing more than to keep her children safe from the vicious toad army. Fight your way through the frog armada and defeat Lord Gulch before time runs out!",
+        "screenshots": ["Images/Backgrounds/LilypadLowdown.png"],
+        "description": "I worked as a programmer on Lilypad Lowdown during a game jam, implementing gameplay systems and supporting the project's core combat and progression flow under a tight deadline. My responsibilities included building features quickly, fixing issues during development, and helping the game feel responsive and complete within the jam scope.",
         "overlayImageSrc": "Images/Itch.png",
         "imageSrc": "Images/Thumbnails/LilypadLowdown.png",
         "video": "Videos/LilypadLowdown.mp4",
@@ -68,24 +105,12 @@
         "year": "2022"
     },
     {
-        "title": "Paradigm",
-        "role": "Composer",
-        "background": "Images/Backgrounds/Paradigm.png",
-        "genre": "Puzzle Adventure",
-        "description": "Beckett awakes, and equipped with the ability to make copies of himself, he must navigate a world that is hostile to anyone who goes alone...but he's not alone...not really. To solve the puzzles, you'll have to think differently: in plurality rather then singularity. Will you follow the pattern? Or become the Paradigm?",
-        "overlayImageSrc": "Images/Itch.png",
-        "imageSrc": "Images/Thumbnails/Paradigm.png",
-        "youtube": "uwuCNKtbU2A",
-        "projectLink": "https://artindi.itch.io/paradigm",
-        "carousel": "Games",
-        "year": "2021"
-    },
-    {
         "title": "Daisy's Quest",
         "role": "Programmer",
         "genre": "Puzzle Comedy",
         "background": "Images/Backgrounds/DaisyQuest.png",
-        "description": "Death isn't always bad. Traverse a wacky world of characters and puzzles by using your corpse as a platform!",
+        "screenshots": ["Images/Backgrounds/DaisyQuest.png"],
+        "description": "As the programmer on Daisy's Quest during a game jam, I built gameplay and puzzle mechanics that supported the project's central design ideas on a compressed schedule. I was responsible for implementing systems, refining interactions, and making sure the game logic supported the intended player experience within the time limit.",
         "overlayImageSrc": "Images/Itch.png",
         "imageSrc": "Images/Thumbnails/Daisy.png",
         "video": "Videos/DaisyQuest.mp4",
@@ -94,24 +119,57 @@
         "year": "2021"
     },
     {
+        "title": "Koko: The Last Leaf",
+        "role": "Composer",
+        "logo": "",
+        "background": "Images/Backgrounds/Koko.png",
+        "screenshots": ["Images/Backgrounds/Koko.png"],
+        "genre": "2D Adventure Metroidvania",
+        "description": "I contributed as the composer for Koko: The Last Leaf, writing music that supported the tone, pacing, and emotional arc of the game. My work focused on reinforcing atmosphere and helping key moments feel memorable through the soundtrack.",
+        "overlayImageSrc": "Images/Steam.png",
+        "imageSrc": "Images/Thumbnails/Koko.png",
+        "engine": "Construct 3",
+        "youtube": "au8_BQRNIXA",
+        "projectLink": "https://store.steampowered.com/app/1967980/Koko_the_Last_Leaf/",
+        "carousel": "Games",
+        "year": "2022"
+    },
+    {
         "title": "Fresh Fruits",
         "role": "Programmer, Artist, Composer",
         "genre": "Dungeon Crawler",
         "background": "Images/Backgrounds/FreshFruit.png",
-        "description": "In this supermarket, the produce comes alive! Play as an avocado, traversing procedurally generated rooms while discovering new abilities, so you can defeat the evil fruit and escape the supermarket.",
+        "screenshots": ["Images/Backgrounds/FreshFruit.png"],
+        "description": "I contributed to Fresh Fruits as a programmer, artist, and composer, giving me ownership across multiple parts of the project. I helped build gameplay systems, create visual assets, and produce music that supported both the game's style and its moment-to-moment feel.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/FreshFruit.png",
         "video": "Videos/FreshFruit.mp4",
         "projectLink": "https://github.com/Swedeachu/LynxEngine-Wiki/wiki",
         "carousel": "Games",
+        "engine": "Lynx Engine",
         "year": "2024"
+    },
+    {
+        "title": "Paradigm",
+        "role": "Composer",
+        "background": "Images/Backgrounds/Paradigm.png",
+        "screenshots": ["Images/Backgrounds/Paradigm.png"],
+        "genre": "Puzzle Adventure",
+        "description": "I worked as the composer for Paradigm, creating music that matched the game's strange tone and puzzle-driven pacing. My responsibility was to support the project's identity through audio and help each area feel more intentional and immersive.",
+        "overlayImageSrc": "Images/Itch.png",
+        "imageSrc": "Images/Thumbnails/Paradigm.png",
+        "youtube": "uwuCNKtbU2A",
+        "projectLink": "https://artindi.itch.io/paradigm",
+        "carousel": "Games",
+        "year": "2021"
     },
     {
         "title": "Seashore Siege",
         "role": "Programmer",
         "background": "Images/Backgrounds/SeashoreSiege.png",
+        "screenshots": ["Images/Backgrounds/SeashoreSiege.png"],
         "genre": "Tower Defense",
-        "description": "Fight sea creatures and create a sandy defense to protect your sandcastle kingdom! Seashore Siege is a top-down tower defense game with a unique cast of creatures and towers. Collect sand dollars to purchase and place towers, and try to get the highest score on the leaderboard!",
+        "description": "As a programmer on Seashore Siege, I implemented gameplay features and supported the systems that drove the tower defense experience. My work focused on making the game loop function cleanly, improving interactions, and helping the project come together as a complete prototype.",
         "overlayImageSrc": "Images/Itch.png",
         "imageSrc": "Images/Thumbnails/SeashoreSiegeThumbnail.png",
         "video": "Videos/SeashoreSiege.mp4",
@@ -119,15 +177,20 @@
         "carousel": "Games",
         "year": "2022"
     },
-
-
-
     {
-        "title": "Otherglow",
+        "title": "Glow Engine",
         "role": "Creator",
         "genre": "3D Engine",
         "background": "Images/Backgrounds/Otherglow.png",
-        "description": "Built for windows and created using DirectX 11, this engine is currently being made to develop 'Otherglow', a first person RPG. It features a lighting engine, editor, collision physics, and serializable game components.",
+        "screenshots": [
+        "Images/Backgrounds/Otherglow.png",
+        "Images/Screenshots/GlowEngine/1.png",
+        {
+            "src": "Images/Screenshots/GlowEngine/2.png",
+            "comment": "Snippet of a custom .obj model parser (C++)"
+        }
+        ],
+        "description": "I created Glow Engine as a custom 3D engine in DirectX 11 to support my own RPG development workflow. My work includes engine architecture, rendering systems, editor tooling, collision and physics, and the serialized component pipeline used to build game content.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/OtherGlowThumbnail.png",
         "projectLink": "https://github.com/callenbv/GlowEngine",
@@ -140,7 +203,18 @@
         "role": "Creator",
         "genre": "2D Engine",
         "background": "Images/Backgrounds/EarthEngine.png",
-        "description": "Earth Engine is a cross-platform game engine developed in C# using the Monogame Framework. Notable features include a custom runtime, prefab editor, tile editor, lighting, collisions, physics, and spatial audio. It is currently being used to make 'The Legend of Ayla', a narrative-heavy RPG in the likeness of The Legend of Zelda.",
+        "screenshots": 
+        [
+            {
+                "src": "Images/Backgrounds/EarthEngine.png",
+                "comment": "Top-down demo project developed in Earth Engine"
+            },
+            {
+                "src": "Images/Screenshots/EarthEngine/1.png",
+                "comment": "ImGui powered UI interface"
+            }
+        ],
+        "description": "I built Earth Engine as a cross-platform 2D engine in C# with MonoGame, with a strong focus on rapid content creation and iteration. My responsibilities included the runtime architecture, editor tools, gameplay support systems, and the technical foundation used to develop larger RPG projects.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/EarthEngine.png",
         "video": "Videos/EarthEngine.mp4",
@@ -153,7 +227,8 @@
         "role": "Graphics Programmer",
         "genre": "2D Engine",
         "background": "Images/Backgrounds/LynxEngineBackground.png",
-        "description": "Lynx Engine was developed with a team of seven people, used to make the game 'Fresh Fruits'. It works as a general 2D game engine with heavily abstracted C++ scripting. It features a robust graphics pipeline, shader support, collision, physics, ImGui, level serialization, custom math libraries, and many gameplay components.",
+        "screenshots": ["Images/Backgrounds/LynxEngineBackground.png"],
+        "description": "I served as a graphics programmer on Lynx Engine, contributing rendering-focused systems within a seven-person engine team. My work centered on the graphics pipeline, visual systems, and engine-level technical features that supported both tooling and gameplay development.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/LynxEngineThumbnail.png",
         "projectLink": "https://github.com/Swedeachu/LynxEngine-Wiki/wiki",
@@ -165,7 +240,8 @@
         "role": "Creator",
         "genre": "3D Engine",
         "background": "Images/Backgrounds/RealEngineBackground.png",
-        "description": "This engine was created with the sole purpose of learning more about game engines and the graphics pipeline. It can generate vertices for 3D objects, and light them using simple point lights, all done in DirectX 11.",
+        "screenshots": ["Images/Backgrounds/RealEngineBackground.png"],
+        "description": "I created this graphics engine as a focused technical project to deepen my understanding of rendering and engine architecture. The work involved implementing 3D geometry generation, lighting, and core DirectX 11 rendering systems from the ground up.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/RealEngineThumbnail.png",
         "projectLink": "https://github.com/callenbv/Real-Engine",
@@ -173,11 +249,78 @@
         "year": "2022"
     },
     {
+        "title": "Room Editor",
+        "role": "Developer",
+        "genre": "Development Tool",
+        "background": "Images/Backgrounds/RoomEditor.png",
+        "screenshots": ["Images/Backgrounds/RoomEditor.png"],
+        "description": "I built Room Editor to speed up level creation and support chunk-based world generation for Earthward. My responsibilities included the editing workflow, data serialization, and usability features that made the tool practical for real content production.",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/RoomEditor.png",
+        "projectLink": "https://github.com/callenbv/roomeditor",
+        "carousel": "AppDevelopment",
+        "year": "Earthward, 2024"
+    },
+    {
+        "title": "Behavior Tree Editor",
+        "role": "Developer",
+        "genre": "Development Tool",
+        "background": "Images/Backgrounds/BehaviorTree.png",
+        "screenshots": ["Images/Backgrounds/BehaviorTree.png"],
+        "description": "I created the Behavior Tree Editor to support enemy AI authoring and iteration for Earthward. My work focused on the editor interface, node system design, and export pipeline so behaviors could be built visually and integrated cleanly into the game.",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/BehaviorTree.png",
+        "projectLink": "https://github.com/callenbv/BehaviorTreeEditor",
+        "carousel": "AppDevelopment",
+        "year": "Earthward, 2025"
+    },
+    {
+        "title": "Earth Edit",
+        "role": "Developer",
+        "genre": "Development Tool",
+        "background": "Images/Backgrounds/EarthEdit.png",
+        "screenshots": ["Images/Backgrounds/EarthEdit.png"],
+        "description": "I built Earth Edit to streamline data authoring for items, accessories, and other game content in Earthward. My responsibilities included designing the schema-driven editing workflow, JSON export pipeline, and the supporting UI used to manage content efficiently.",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/EarthEdit.png",
+        "projectLink": "https://github.com/callenbv/EarthEdit",
+        "carousel": "AppDevelopment",
+        "year": "Earthward, 2024"
+    },
+    {
+        "title": "Budget Master",
+        "role": "Developer",
+        "genre": "Financial App",
+        "background": "Images/Backgrounds/KiraBudget.png",
+        "screenshots": ["Images/Backgrounds/KiraBudget.png"],
+        "description": "I developed Budget Master as a full budgeting application focused on practical financial tracking and planning. My work included building the app's core features, data flow, and visual reporting tools so users could manage budgets and understand spending patterns more clearly.",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/KiraBudget.png",
+        "projectLink": "https://github.com/callenbv/BudgetMaster",
+        "engine": ".NET / WPF",
+        "carousel": "AppDevelopment",
+        "year": "2025"
+    },
+    {
+        "title": "Kira AI Agent",
+        "role": "Developer",
+        "genre": "AI Assistant",
+        "background": "Images/Backgrounds/KiraAI.png",
+        "screenshots": ["Images/Backgrounds/KiraAI.png"],
+        "description": "I built Kira AI Agent as an assistant-oriented application designed around automation, contextual responses, and task support. My responsibilities included shaping the interaction flow, integrating AI-driven behaviors, and building the surrounding application logic that made the tool useful in practice.",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/KiraAI.png",
+        "projectLink": "https://github.com/callenbv/Kira-AI-Agent",
+        "carousel": "AppDevelopment",
+        "year": "2025"
+    },
+    {
         "title": "Portfolio",
         "role": "Developer",
         "genre": "Website",
         "background": "Images/Thumbnails/Website.png",
-        "description": "The website you're currently using is made using Javascript, CSS, and HTML. It features project slides, carousels, and a custom video player, complete with thumbnails, backgrounds, and trailers! Data is completely serialized as JSON objects, making it easy to add a new project.",
+        "screenshots": ["Images/Thumbnails/Website.png"],
+        "description": "I designed and developed this portfolio site to present my work through custom carousels, media showcases, and a data-driven project system. My responsibilities included the front-end UI, interaction design, reusable project architecture, and the overall presentation strategy used to communicate both polish and technical ability.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/Portfolio.png",
         "projectLink": "https://github.com/callenbv/GlowEngine",
@@ -189,7 +332,8 @@
         "role": "Developer",
         "genre": "Terraria Mod",
         "background": "Images/Backgrounds/ArcheryOverhaulBackground.png",
-        "description": "Tired of using the same old bow and arrow? Look no further! Archery Overhaul adds 150+ items, including new weapons, accessories, materials, and NPCs. Explore several new crafting trees with fully completed progression, even up to the Moonlord!",
+        "screenshots": ["Images/Backgrounds/ArcheryOverhaulBackground.png"],
+        "description": "I developed Archery Overhaul as a large Terraria mod centered on expanding ranged combat progression. My work included designing and implementing new content, progression paths, and supporting systems across weapons, accessories, materials, and NPC interactions.",
         "overlayImageSrc": "Images/Terraria.png",
         "imageSrc": "Images/Thumbnails/ArcheryOverhaulThumbnail.png",
         "youtube": "Bfh8TbKX6OI",
@@ -202,7 +346,8 @@
         "role": "Developer",
         "genre": "Terraria Mod",
         "background": "Images/Backgrounds/SpearOverhaulBackground.png",
-        "description": "Spear Overhaul adds 20 new spears to establish a progression for the spear sub-class! Spears can now be thrown, dealing spear damage, which is increased by crafting new gear and accessories.",
+        "screenshots": ["Images/Backgrounds/SpearOverhaulBackground.png"],
+        "description": "I created Spear Overhaul to expand the spear subclass in Terraria with new progression, mechanics, and supporting gear. My responsibilities included system design, implementation of new items and behaviors, and balancing the experience so the subclass felt more complete and rewarding.",
         "overlayImageSrc": "Images/Terraria.png",
         "imageSrc": "Images/Thumbnails/SpearOverhaulThumbnail.png",
         "video": "Videos/SpearOverhaul.mp4",
@@ -215,7 +360,8 @@
         "role": "Developer",
         "genre": "Terraria Mod",
         "background": "Images/Backgrounds/SorceryOverhaulBackground.png",
-        "description": "There's a lot of magic in Terraria, but sometimes it can be underwhelming. Sorcery Overhaul adds 100+ items, ranging from tomes, staffs, accessories, and more! Explore new weapon progressions and armor sets as well as new mana based mechanics.",
+        "screenshots": ["Images/Backgrounds/SorceryOverhaulBackground.png"],
+        "description": "I built Sorcery Overhaul as a large-scale Terraria mod focused on improving mage progression and making magic combat more satisfying. My work involved designing and implementing new items, armor sets, progression structures, and mana-based mechanics to create a fuller class experience.",
         "overlayImageSrc": "Images/Terraria.png",
         "imageSrc": "Images/Thumbnails/SorceryOverhaulThumbnail.png",
         "youtube": "aiaTNMozHDs",
@@ -228,74 +374,12 @@
         "role": "Developer",
         "genre": "Terraria Mod",
         "background": "Images/Backgrounds/RiptideMod.png",
-        "description": "Want to make a Terraria mod? Learn how tModloader works by watching the YouTube series where I make swords, staffs, armor, and more! Understand basic programming principles and how to apply them to make engaging and fun mods.",
+        "screenshots": ["Images/Backgrounds/RiptideMod.png"],
+        "description": "I created Riptide's Mod as both a Terraria mod and a teaching project for demonstrating tModLoader development. My responsibilities included building example content, structuring the code in a way that was approachable to learners, and producing a project that could support educational walkthroughs.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/RiptideMod.png",
         "projectLink": "https://github.com/callenbv/RiptideMod",
         "carousel": "Other",
         "year": "tModloader, 2024"
-    },
-
-
-
-    {
-        "title": "Room Editor",
-        "role": "Developer",
-        "genre": "Development Tool",
-        "background": "Images/Backgrounds/RoomEditor.png",
-        "description": "Create and design your own levels by painting tiles and placing objects. All data is exported to JSON, making it practical for several game engines. This tool was made for chunk-based generation in Earthward.",
-        "overlayImageSrc": "Images/Github.png",
-        "imageSrc": "Images/Thumbnails/RoomEditor.png",
-        "projectLink": "https://github.com/callenbv/roomeditor",
-        "carousel": "AppDevelopment",
-        "year": "Earthward, 2024"
-    },
-    {
-        "title": "Budget Master",
-        "role": "Developer",
-        "genre": "Financial App",
-        "background": "Images/Backgrounds/KiraBudget.png",
-        "description": "A comprehensive budget management application that helps users track expenses, set financial goals, and visualize spending patterns. Features include expense categorization, budget planning, and graph visualization of spending.",
-        "overlayImageSrc": "Images/Github.png",
-        "imageSrc": "Images/Thumbnails/KiraBudget.png",
-        "projectLink": "https://github.com/callenbv/BudgetMaster",
-        "carousel": "AppDevelopment",
-        "year": "2025"
-    },
-    {
-        "title": "Kira AI Agent",
-        "role": "Developer",
-        "genre": "AI Assistant",
-        "background": "Images/Backgrounds/KiraAI.png",
-        "description": "An intelligent AI agent designed to assist with various tasks including data analysis, automation, and decision support. Built with modern AI technologies to provide contextual and helpful responses.",
-        "overlayImageSrc": "Images/Github.png",
-        "imageSrc": "Images/Thumbnails/KiraAI.png",
-        "projectLink": "https://github.com/callenbv/Kira-AI-Agent",
-        "carousel": "AppDevelopment",
-        "year": "2025"
-    },
-    {
-        "title": "Earth Edit",
-        "role": "Developer",
-        "genre": "Development Tool",
-        "background": "Images/Backgrounds/EarthEdit.png",
-        "description": "Create and edit items, accessories, and more using preset data schemas that can export to JSON. Shows a display of all images related to the open item. This tool was made primarily for Earthward.",
-        "overlayImageSrc": "Images/Github.png",
-        "imageSrc": "Images/Thumbnails/EarthEdit.png",
-        "projectLink": "https://github.com/callenbv/EarthEdit",
-        "carousel": "AppDevelopment",
-        "year": "Earthward, 2024"
-    },
-    {
-        "title": "Behavior Tree Editor",
-        "role": "Developer",
-        "genre": "Development Tool",
-        "background": "Images/Backgrounds/BehaviorTree.png",
-        "description": "Create a simple behavior tree with action nodes, decorators, and composite nodes, all completely customizable. Save to a .bt file or export to json. This tool was made for enemy AI in Earthward.",
-        "overlayImageSrc": "Images/Github.png",
-        "imageSrc": "Images/Thumbnails/BehaviorTree.png",
-        "projectLink": "https://github.com/callenbv/BehaviorTreeEditor",
-        "carousel": "AppDevelopment",
-        "year": "Earthward, 2025"
     }
 ]
