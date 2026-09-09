@@ -53,7 +53,7 @@
             "comment": "Toon outline shader and depth-based water"
         }
     ],
-    "description": "As Tech Lead and Game Designer, I helped drive technical direction, production quality, and team reliability on Midnight Delivery. My work included quest design, physics and shader programming, dynamic event design, and a CI/CD pipeline in Jenkins helping keep the project stable and shippable across development.",
+    "description": "As Tech Lead and Content Designer, my work included quest design, physics and shader programming, event design, and a CI/CD pipeline in Jenkins helping keep the project stable throughout development.",
     "overlayImageSrc": "Images/Unreal.png",
         "imageSrc": "Images/Thumbnails/MidnightDelivery.png",
         "video": "Videos/MidnightDelivery.mp4",
