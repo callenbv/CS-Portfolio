@@ -20,13 +20,10 @@
         },
         {
             "src": "Images/Screenshots/Earthward/EW4.png"
-        },
-        {
-            "src": "Images/Screenshots/Earthward/EW5.png"
         }
         ],
         "genre": "Roguelike RPG",
-        "description": "I created everything for Earthward including netcode, world generation, combat, and a custom render pipeline in Unity built to sustain Steam-comptaible games with up to four players.",
+        "description": "I created everything for Earthward including netcode, procedural generation, combat mechanics, dynamic events, and a custom lighting pipeline in Unity built to sustain Steam-comptaible games with up to four players.",
         "overlayImageSrc": "Images/Unity.png",
         "imageSrc": "Images/Thumbnails/Earthward.png",
         "video": "Videos/Earthward2.mp4",
@@ -56,7 +53,7 @@
             "comment": "Toon outline shader and depth-based water"
         }
     ],
-    "description": "As Tech Lead and Quality Advocate, I helped drive technical direction, production quality, and team reliability on Midnight Delivery. My work included physics and shader programming, creating the CI/CD pipeline in Jenkins, identifying and resolving quality issues, and helping keep the project stable and shippable across development.",
+    "description": "As Tech Lead and Game Designer, I helped drive technical direction, production quality, and team reliability on Midnight Delivery. My work included quest design, physics and shader programming, dynamic event design, and a CI/CD pipeline in Jenkins helping keep the project stable and shippable across development.",
     "overlayImageSrc": "Images/Unreal.png",
         "imageSrc": "Images/Thumbnails/MidnightDelivery.png",
         "video": "Videos/MidnightDelivery.mp4",
