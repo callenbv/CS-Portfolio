@@ -487,7 +487,7 @@ function updateActiveSlides(carouselId) {
             activeImg.classList.add('active');
             activeImg.style.opacity = '1';
             activeImg.style.transform = 'scale(1)';
-            activeOverlay.style.transform = 'scale(0.75)';
+            activeOverlay.style.transform = 'scale(0)';
 
             // reset hero preview
             if (heroPreview) {

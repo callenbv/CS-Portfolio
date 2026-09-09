@@ -4,24 +4,29 @@
         "role": "Developer",
         "logo": "",
         "background": "Images/Backgrounds/Earthward.png",
-        "screenshots": ["Images/Backgrounds/Earthward.png", 
+        "screenshots": 
+        [
         {
-            "src": "Images/Screenshots/Earthward/Shader.png",
-            "comment": "Glow shader for fire (HLSL)"
+            "src": "Images/Screenshots/Earthward/EW1.png",
+            "comment": "4-player Steam lobby"
         }, 
-        "Images/Screenshots/Earthward/Worm.png", 
         {
-            "src": "Images/Screenshots/Earthward/Earthward3.png", 
+            "src": "Images/Screenshots/Earthward/EW2.png",
             "comment": "Procedural World Generation tool in Unity"
-        },
-        "Images/Screenshots/Earthward/Earthward1.png", 
+        }, 
         {
-            "src": "Images/Screenshots/Earthward/UI.png", 
-            "comment": "Character Selection UI with unlockable characters"
+            "src": "Images/Screenshots/Earthward/EW3.png", 
+            "comment": "Glow shader for fire (HLSL)"
+        },
+        {
+            "src": "Images/Screenshots/Earthward/EW4.png"
+        },
+        {
+            "src": "Images/Screenshots/Earthward/EW5.png"
         }
         ],
         "genre": "Roguelike RPG",
-        "description": "I led development across gameplay systems, content creation, and production for Earthward. My work included netcode, combat and progression systems, editor tooling, software tooling, and shader and materials programming that supported both the game's look and the team's iteration workflow.",
+        "description": "I created everything for Earthward including netcode, world generation, combat, and a custom render pipeline in Unity built to sustain Steam-comptaible games with up to four players.",
         "overlayImageSrc": "Images/Unity.png",
         "imageSrc": "Images/Thumbnails/Earthward.png",
         "video": "Videos/Earthward2.mp4",
@@ -31,7 +36,7 @@
     },
     {
         "title": "Midnight Delivery",
-        "role": "Tech Lead/Quality Advocate",
+        "role": "Tech Lead, Content Designer",
         "genre": "Adventure",
         "background": "Images/Backgrounds/MidnightDelivery.png",
         "screenshots": [
@@ -220,7 +225,7 @@
         "video": "Videos/EarthEngine.mp4",
         "projectLink": "https://github.com/callenbv/Earth-Engine",
         "carousel": "Engines",
-        "year": "In Development"
+        "year": "2026"
     },
     {
         "title": "Lynx Engine",
@@ -254,7 +259,7 @@
         "genre": "Development Tool",
         "background": "Images/Backgrounds/RoomEditor.png",
         "screenshots": ["Images/Backgrounds/RoomEditor.png"],
-        "description": "I built Room Editor to speed up level creation and support chunk-based world generation for Earthward. My responsibilities included the editing workflow, data serialization, and usability features that made the tool practical for real content production.",
+        "description": "I built Room Editor to speed up level creation and support chunk-based world generation for Gamemaker. My responsibilities included the editing workflow, data serialization, and usability features that made the tool practical for real content production.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/RoomEditor.png",
         "projectLink": "https://github.com/callenbv/roomeditor",
@@ -267,7 +272,7 @@
         "genre": "Development Tool",
         "background": "Images/Backgrounds/BehaviorTree.png",
         "screenshots": ["Images/Backgrounds/BehaviorTree.png"],
-        "description": "I created the Behavior Tree Editor to support enemy AI authoring and iteration for Earthward. My work focused on the editor interface, node system design, and export pipeline so behaviors could be built visually and integrated cleanly into the game.",
+        "description": "I created the Behavior Tree Editor to support enemy AI authoring and iteration for Gamemaker. My work focused on the editor interface, node system design, and export pipeline so behaviors could be built visually and integrated cleanly into the game.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/BehaviorTree.png",
         "projectLink": "https://github.com/callenbv/BehaviorTreeEditor",
@@ -280,7 +285,7 @@
         "genre": "Development Tool",
         "background": "Images/Backgrounds/EarthEdit.png",
         "screenshots": ["Images/Backgrounds/EarthEdit.png"],
-        "description": "I built Earth Edit to streamline data authoring for items, accessories, and other game content in Earthward. My responsibilities included designing the schema-driven editing workflow, JSON export pipeline, and the supporting UI used to manage content efficiently.",
+        "description": "I built Earth Edit to streamline data authoring for items, accessories, and other game content in Gamemaker. My responsibilities included designing the schema-driven editing workflow, JSON export pipeline, and the supporting UI used to manage content efficiently.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/EarthEdit.png",
         "projectLink": "https://github.com/callenbv/EarthEdit",
