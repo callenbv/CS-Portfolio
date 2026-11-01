@@ -15,11 +15,16 @@
             "comment": "Procedural World Generation tool in Unity"
         }, 
         {
+            "src": "Images/Screenshots/Earthward/EW5.png",
+            "comment": "Player home base"
+        }, 
+        {
             "src": "Images/Screenshots/Earthward/EW3.png", 
             "comment": "Glow shader for fire (HLSL)"
         },
         {
-            "src": "Images/Screenshots/Earthward/EW4.png"
+            "src": "Images/Screenshots/Earthward/EW4.png",
+            "comment": "Lush Caves Biome"
         }
         ],
         "genre": "Roguelike RPG",
