@@ -9,17 +9,19 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="section.css">
-    <link rel="stylesheet" href="word.css">
-    <link rel="stylesheet" href="hamburger.css">
+
+    <link rel="stylesheet" href="hamburger.css?v=2">
     <link rel="stylesheet" href="thumbnail.css">
-    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="sidebar.css?v=2">
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="Utility/scrollbar.css">
     <link rel="stylesheet" href="Utility/image.css">
+<link rel="stylesheet" href="refresh.css"><link rel="stylesheet" href="visual.css"><link rel="stylesheet" href="pages.css">
+<script src="site.js?v=4" defer></script>
 </head>
 
-<body class="about-page">
+<body class="about-page"><a class="skip-link" href="#main">Skip to content</a>
     <!-- Quick Navbar for home page -->
     <nav id="navbar">
         <a href="index.html" class="nav-link github">Home</a>
@@ -33,7 +35,7 @@
     <hr class="horizontal-line-thin">
 
     <!-- Hamburger Menu -->
-    <button class="hamburger-menu" onclick="toggleSidebar()">
+    <button aria-label="Open menu" class="hamburger-menu" onclick="toggleSidebar()">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
@@ -51,46 +53,20 @@
     </div>
     <div id="overlay" class="overlay"></div>
 
-    <!-- Hero Section -->
-    <!-- <div class="header-banner">
-        <div class="header-title">Callen Betts</div>
-        <div class="header-icons">
-            <a href="https://steamcommunity.com/profiles/76561199193791468/" target="_blank" title="Steam">
-                <img src="Images/Steam.png" alt="Steam">
-            </a>
-            <a href="https://github.com/callenbv" target="_blank" title="Github">
-                <img src="Images/Github.png" alt="Github">
-            </a>
-            <a href="https://riptide-studios.itch.io/" target="_blank" title="Itch.io">
-                <img src="Images/Itch.png" alt="Itch.io">
-            </a>
-            <a href="https://www.youtube.com/@RiptideDev_" target="_blank" title="YouTube">
-                <img src="Images/Youtube.png" alt="YouTube">
-            </a>
-        </div>
-    </div> -->
-
     <!-- About Me Section -->
-    <div class="about-section">
-        <div class="aboutTitle">
-            <h1>Hi, I'm Callen!</h1>
-            <h3>
-                <span class="fade-word">GAME DEVELOPER,</span>
-                <span class="fade-word">PROGRAMMER</span>
-                <span class="yellow-text fade-word">CREATOR.</span>
-            </h3>
-        </div>
-        
+    <main class="about-section" id="main">
+        <header class="aboutTitle"><span class="eyebrow">About</span><h1>Hi, I'm Callen!</h1><p class="page-summary">Game developer and programmer. I make games, engines, and tools.</p></header>
+
         <!-- About Me Section -->
         <div class="about-row left-edge">
             <div class="about-image">
                 <img src="Images/About/Me.jpg" alt="Callen Betts" loading="lazy" decoding="async">
             </div>
             <div class="about-text">
-                <h3>About Me</h3>
+                <h2>About Me</h2>
                 <p>My dad taught me how to code when I was 10 years old.
                     A decade later, I've created nearly twenty games, working and learning alongside industry professionals.
-                    My peers taught me that collaboration is just as important as knowing how to code, and that great games need a great team to be successful.</p>
+                    I’ve worked on solo projects, game jams, and student teams.</p>
                 <p>
                     When I'm not making games, you can find me enjoying the latest Brandon Sanderson book, or traveling with my friends.
                     I was born in Lisbon, Portugal, and every year I visit our family and explore the beautiful streets of Cascais!
@@ -102,16 +78,13 @@
         <!-- Experience Section -->
         <div class="about-row right-edge">
             <div class="about-text">
-                <h3>What I've Done</h3>
+                <h2>What I've Done</h2>
                 <p>
-                    I studied game development at <a href="https://www.digipen.edu/" target="_blank">DigiPen Institute of Technology</a>, where I spent years building games alongside talented peers and learning how strong teams collaborate. I also previously interned at <a href="https://www.arenanet.com/" target="_blank">ArenaNet</a>, where I gained firsthand experience working alongside professional developers in a production environment.
-                </p>
-                <p>
-                    Those experiences helped shape how I approach technical quality, iteration, communication, and teamwork, and they played a big role in how I grew as both a programmer and a teammate.
+                    I studied game development at <a href="https://www.digipen.edu/" target="_blank">DigiPen Institute of Technology</a>, where I built games with other students. I also worked as a Gameplay Engineer Intern at <a href="https://www.arenanet.com/" target="_blank">ArenaNet</a>, contributing to <a href="projects.html#guild-wars-3">Guild Wars 3</a>.
                 </p>
             </div>
             <div class="about-image">
-                <img src="Images/About/DigiPen.png" alt="ArenaNet Experience" loading="lazy" decoding="async">
+                <img src="Images/About/DigiPen.png" alt="DigiPen campus" loading="lazy" decoding="async">
             </div>
         </div>
 
@@ -121,12 +94,9 @@
                 <img src="Images/About/BahaiCenter.png" alt="Community Work" loading="lazy" decoding="async">
             </div>
             <div class="about-text">
-                <h3>JYSEP</h3>
+                <h2>JYSEP</h2>
                 <p>
-                    As a Baha'i, I've also been involved with JYSEP, the Junior Youth Spiritual Empowerment Program. It's been a meaningful part of my life because it focuses on service, mentorship, and helping younger people build confidence, moral reasoning, and a sense of purpose in their communities.
-                </p>
-                <p>
-                    That involvement has influenced how I think about leadership and relationships with others. It reminds me that growth isn't just about technical skill, but also about learning how to support people, listen well, and contribute to something larger than yourself.
+                    As a Baha'i, I've also been involved with JYSEP, the Junior Youth Spiritual Empowerment Program. The program focuses on service and mentorship, helping young people build confidence and contribute to their communities.
                 </p>
             </div>
         </div>
@@ -134,7 +104,7 @@
                 <!-- Teaching Section -->
         <div class="about-row right-edge">
             <div class="about-text">
-                <h3>Coding With Kids</h3>
+                <h2>Coding With Kids</h2>
                 <p>
                     In my spare time, I work as an instructor at <a href="https://www.codingwithkids.com/" target="_blank">Coding with Kids</a>, helping aspiring programmers learn how to create their own games. It isn't always easy working in a classroom, but seeing the look on their faces when they get something to work is priceless.
                 </p>
@@ -146,49 +116,8 @@
                 <img src="Images/About/CodingKids.png" alt="Teaching" loading="lazy" decoding="async">
             </div>
         </div>
-    </div>
-
-    <div class="bottom-headline-wrapper">
-        <div class="bottom-headline">
-            <div class="copyright-text">(2025) Created By Callen Betts</div>
-        </div>
-    </div>
-
-    <!-- End main body -->
-
-    <script>
-        window.addEventListener('load', function() {
-            document.body.classList.add('fade-in');
-        });
-    </script>
-
-    <script src="word.js"></script>
-    <script src="sidebar.js"></script>
-    <script src="navbar.js"></script>
-
-    <a href="contact.html" class="contact-fab" id="contactFab" title="Contact">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#fff">
-        <circle cx="12" cy="12" r="12" fill="#7b2ff2"/>
-        <path d="M17.707 16.293l-2.387-2.387a1 1 0 0 0-1.414 0l-.793.793a11.05 11.05 0 0 1-4.95-4.95l.793-.793a1 1 0 0 0 0-1.414L7.707 6.293a1 1 0 0 0-1.414 0l-1.293 1.293a2 2 0 0 0-.293 2.293c1.707 3.707 4.586 6.586 8.293 8.293a2 2 0 0 0 2.293-.293l1.293-1.293a1 1 0 0 0 0-1.414z" fill="#fff"/>
-      </svg>
-    </a>
-    <script>
-      window.addEventListener('scroll', function() {
-        const fab = document.getElementById('contactFab');
-        const scrollY = window.scrollY || window.pageYOffset;
-        const windowHeight = window.innerHeight;
-        const docHeight = document.documentElement.scrollHeight;
-        if (scrollY + windowHeight >= docHeight - 10) {
-          fab.style.opacity = '1';
-          fab.style.pointerEvents = 'auto';
-        } else {
-          fab.style.opacity = '0';
-          fab.style.pointerEvents = 'none';
-        }
-      });
-    </script>
-
+    </main>
+<footer class="portfolio-footer"><span>Callen Betts · Game Developer</span><a href="contact.html">Contact</a></footer>
+<script src="sidebar.js?v=2"></script>
 </body>
-</html> 
-
-
+</html>

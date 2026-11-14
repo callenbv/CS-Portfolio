@@ -3,30 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Callen Betts - Game Developer Portfolio</title>
+    <title>Contact - Callen Betts</title>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("yufLtDwDBZjq5j2mF");
-        })();
-    </script>
+
 
     <!-- Style sheets -->
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="section.css">
-    <link rel="stylesheet" href="word.css">
-    <link rel="stylesheet" href="hamburger.css">
+
+    <link rel="stylesheet" href="hamburger.css?v=2">
     <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="sidebar.css?v=2">
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="Utility/scrollbar.css">
     <link rel="stylesheet" href="Utility/image.css">
+<link rel="stylesheet" href="refresh.css"><link rel="stylesheet" href="visual.css"><link rel="stylesheet" href="pages.css">
+<script src="site.js?v=4" defer></script>
 </head>
 
-<body>
+<body class="contact-page"><a class="skip-link" href="#main">Skip to content</a>
     <div class="about-page">
         <!-- Quick Navbar for home page -->
         <nav id="navbar">
@@ -41,7 +39,7 @@
         <hr class="horizontal-line-thin">
 
         <!-- Hamburger Menu -->
-        <button class="hamburger-menu" onclick="toggleSidebar()">
+        <button aria-label="Open menu" class="hamburger-menu" onclick="toggleSidebar()">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
@@ -58,65 +56,27 @@
             </div>
         </div>
 
-        <button id="okButton" class="okButton">OK</button>
-
-        <div id="overlay" class="overlay">
-            <div id="overlayText" class="overlay-text"></div>
-        </div>
-
-        <!-- MAIN BODY -->
-        <div class="contact-container">
-            <!-- Left side - Contact info -->
-            <div class="contact-info">
-                <div class="chat-text-wrapper">
-                    <div class="chat-text">Want to connect?</div>
-                    <div class="chat-subtext">Let me know! Send a secure email.</div>
-                </div>
-            </div>
-
-            <!-- Right side - Contact form -->
-            <div class="contact-form">
-                <div class="message-box-wrapper">
-                    <div class="message-box-title">
-                        Powered by EmailJS
-                        <div class="gmail-image">
-                            <img src="Images/Contact/Gmail.png" alt="Gmail">
-                        </div>
-                    </div>
-                    <div id="name" class="message-box">
-                        <textarea id="nameText" placeholder="Name*"></textarea>
-                    </div>
-                    <div id="email" class="message-box">
-                        <textarea id="emailText" placeholder="Your Email*"></textarea>
-                    </div>
-                    <div id="subject" class="message-box">
-                        <textarea id="subjectText" placeholder="Subject"></textarea>
-                    </div>
-                    <div id="message" class="message-box-description">
-                        <textarea id="messageText" placeholder="Message"></textarea>
-                    </div>
-                    <button id="sendButton" class="send-button">
-                        <img src="Images/Contact/SendButton.png" alt="Send">
-                        Send
-                    </button>
-                </div>
-            </div>
-        </div>
-
-
-
-        <!-- End main body -->
-
-        <script>
-            window.addEventListener('load', function() {
-                document.body.classList.add('fade-in');
-            });
-        </script>
-
-        <script src="word.js"></script>
-        <script src="sidebar.js"></script>
-        <script src="navbar.js"></script>
-        <script src="contact.js"></script>
+<div id="overlay" class="overlay"></div>
+<main class="contact-container" id="main">
+  <div class="contact-info"><header class="chat-text-wrapper">
+    <h1 class="chat-text">Want to connect?</h1>
+    <p class="chat-subtext">Have a project in mind, or want to talk games? Send me a message.</p>
+    <section class="contact-socials" aria-labelledby="socials-title"><h2 id="socials-title">Socials</h2><div class="contact-links"><a href="https://www.linkedin.com/in/callen-betts-virott-291807256/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96C2 21.32 2.69 22 3.55 22h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.45 7.9a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.3 10.85H15.8V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.51V9.2h2.83v1.3h.04c.4-.75 1.36-1.55 2.79-1.55 2.98 0 3.58 1.96 3.58 4.51v5.29Z"/></svg></a><a href="https://www.youtube.com/@RiptideDev_" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a><a href="https://github.com/callenbv" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.3 1.8 1.3 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.2 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg></a></div></section>
+  </header></div>
+  <form class="contact-form" id="contactForm">
+    <div class="message-box-wrapper">
+      <div class="contact-field-row">
+        <div class="contact-field"><label for="nameText">Name</label><input id="nameText" name="name" autocomplete="name" required maxlength="120"></div>
+        <div class="contact-field"><label for="emailText">Email</label><input id="emailText" name="email" type="email" autocomplete="email" required maxlength="254"></div>
+      </div>
+      <div class="contact-field"><label for="subjectText">Subject <span class="optional">(optional)</span></label><input id="subjectText" name="subject" maxlength="200"></div>
+      <div class="contact-field"><label for="messageText">Message</label><textarea id="messageText" name="message" rows="6" required maxlength="10000"></textarea></div>
+      <button id="sendButton" class="send-button" type="submit">Send message</button>
+      <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
     </div>
-</body>
-</html>
+  </form>
+</main>
+</div>
+<footer class="portfolio-footer"><span>Callen Betts · Game Developer</span><a href="projects.html">Projects</a></footer>
+<script src="sidebar.js?v=2"></script><script src="contact.js?v=2"></script>
+</body></html>

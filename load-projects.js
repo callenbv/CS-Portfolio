@@ -1,12 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('Data/projects.json')  // Ensure the path to your JSON file is correct
+    fetch('Data/projects.json', { cache: 'no-cache' })
         .then(response => response.json())
         .then(data => {
             data.forEach(item => createCarouselSlide(item));
             initializeCarousels();  // This initializes carousels after slides are created
+            selectLinkedProject();
         })
         .catch(error => console.error('Error loading the projects:', error));
 });
+
+function projectSlug(title) {
+    return title.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+function selectLinkedProject() {
+    const slug = location.hash.slice(1);
+    if (!slug) return;
+    const slide = Array.from(document.querySelectorAll('.image-container'))
+        .find(item => projectSlug(item.dataset.title) === slug);
+    if (!slide) return;
+    const carousel = slide.closest('.carousel-container');
+    const slides = Array.from(carousel.querySelectorAll('.image-container'));
+    selectedCarouselId = carousel.id;
+    slideIndexes[carousel.id] = slides.indexOf(slide);
+    deactivateAllSlides(carousel.id);
+    updateActiveSlides(carousel.id);
+    updateSlidePosition(carousel.id, slideIndexes[carousel.id]);
+    document.querySelector('.upper-container').scrollTop = 0;
+    carousel.scrollIntoView({ block: 'center' });
+}
+
+window.addEventListener('hashchange', selectLinkedProject);
 
 function createCarouselSlide(item) {
 
@@ -176,18 +200,8 @@ function updateActiveSlideDisplay(carouselId) {
         titleElement.textContent = title;
         descriptionElement.textContent = description;
         imageOverlayElement.src = activeSlide.dataset.overlayImageSrc;
-        roleElement.textContent = activeSlide.dataset.role+" - "+activeSlide.dataset.genre;
+        roleElement.textContent = formatProjectDetails(activeSlide.dataset);
 
-        // append a year if it exists
-        if (year != 'undefined')
-        {
-            roleElement.textContent += " ("+year+")";
-        }
-
-        if (engine && engine !== 'undefined' && String(engine).trim() !== '') {
-            roleElement.textContent += ", " + engine;
-        }
-        
         // add a link to the official project page
         const projectLink = activeSlide.dataset.projectLink;
         if (hasProjectLink(projectLink)) {

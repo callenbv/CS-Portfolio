@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Callen Betts - Game Developer Portfilio</title>
+  <title>Callen Betts - Game Developer Portfolio</title>
 
   <!-- Style sheets -->
-  <link rel="stylesheet" href="index.css"> 
+  <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="section.css">
-  <link rel="stylesheet" href="word.css">
-  <link rel="stylesheet" href="hamburger.css">
+
+  <link rel="stylesheet" href="hamburger.css?v=2">
   <link rel="stylesheet" href="thumbnail.css">
-  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="sidebar.css?v=2">
   <link rel="stylesheet" href="about.css">
   <link rel="stylesheet" href="video-player.css">
   <link rel="stylesheet" href="game-project.css">
@@ -22,10 +22,11 @@
   <link rel="stylesheet" href="Utility/image.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+<link rel="stylesheet" href="refresh.css"><link rel="stylesheet" href="visual.css">
+<script src="site.js?v=4" defer></script>
 </head>
 
-<div class="about-page">
-<body>
+<body class="projects-page">
 
 <hr class="horizontal-line">
 <hr class="horizontal-line-thin">
@@ -40,7 +41,7 @@
 </nav>
 
 <!-- Hamburger Menu -->
-<button class="hamburger-menu" id = "hamburger" onclick="toggleSidebar()">
+<button aria-label="Open menu" class="hamburger-menu" id = "hamburger" onclick="toggleSidebar()">
   <div class="bar"></div>
   <div class="bar"></div>
   <div class="bar"></div>
@@ -58,11 +59,11 @@
 <div id="overlay" class="overlay"></div>
 
 <div class="custom-video-player" id="player">
-  
+
   <div class="top-bar"></div>
   <button class="close-btn">&#10005;</button> <!-- Unicode character for "X" -->
   <video id="video" poster="" preload="auto" playsinline>
-      <source src="Videos/Video.mp4" type="video/mp4" >
+
       Your browser does not support the video tag.
   </video>
   <div class="video-overlay"></div> <!-- Overlay for play/pause icon -->
@@ -76,7 +77,7 @@
 
 <div class = "page-overlay" id = "page-overlay">
   <div class="upper-container">
-    
+
 <!-- About Icon -->
 <!-- <a href="about.html" class="profile-container">
   <img src="Images/profile.jpg" alt="Profile" class="profile">
@@ -89,10 +90,10 @@
       <h1></h1>
       <div class = "game-text-role">Developer</div>
       <p class="game-description"></p>
-      <p>
+      <div class="project-actions">
+        <img src="Images/Steam.png" class="slide-icon" alt="Project platform">
         <a href="" target="_blank" class="game-text-link">View Project</a>
-      </p>
-      <img src="Images/Steam.png" class="slide-icon" alt="Icon Description">
+      </div>
     </div>
 
     <div class="slideshow-container">
@@ -107,19 +108,18 @@
           </div>
         <button class="hero-media-nav hero-media-next" id="heroMediaNext" type="button" aria-label="Next media">&#10095;</button>
     </div>
-    
+
     <button class="player-button" id = "playButton">
       Preview <i class="fas fa-play-circle"></i> <!-- Font Awesome Play Icon -->
     </button>
   </div>
-    
+
   <!-- End of upper container -->
   </div>
 
 
   <div class="lower-container">
-
-    <br><br><br><br>
+<br><br><br><br>
 
       <!-- Game Titles -->
       <div class = "titleWord">Game Titles</div>
@@ -133,14 +133,14 @@
 
       <!-- Software Development -->
       <div class="titleWord">Software Development</div>
-      
+
       <div class="carousel-container" id="appdevelopment-carousel">
         <div class="carousel-slide">
         </div>
         <button class="prev" onclick="moveSlide(-1, 'appdevelopment-carousel')">&#10094;</button>
         <button class="next" onclick="moveSlide(1, 'appdevelopment-carousel')">&#10095;</button>
       </div>
-            
+
       <!-- Game Engines -->
       <div class="titleWord">Game Engines</div>
 
@@ -150,10 +150,10 @@
         <button class="prev" onclick="moveSlide(-1, 'engines-carousel')">&#10094;</button>
         <button class="next" onclick="moveSlide(1, 'engines-carousel')">&#10095;</button>
       </div>
-      
+
       <!-- Other -->
       <div class="titleWord">Cool Projects</div>
-      
+
       <div class="carousel-container" id="other-carousel">
         <div class="carousel-slide">
         </div>
@@ -170,13 +170,13 @@
 window.addEventListener('load', function() {
   document.body.classList.add('fade-in');
 });
-  
+
 </script>
 <script src="word.js"></script>
-<script src="sidebar.js"></script>
+<script src="sidebar.js?v=2"></script>
 <script src="navbar.js"></script>
 <script src="video-player.js"></script>
-<script src="load-projects.js"></script>
+<script src="load-projects.js?v=3"></script>
 <script src="carousel-container.js"></script>
 <script>
   // expose flag for player state so previews can respect it
@@ -205,5 +205,4 @@ window.addEventListener('load', function() {
 </script>
 
 </body>
-</div>
 </html>

@@ -1,33 +1,43 @@
-// Function to toggle the sidebar and overlay
-function toggleSidebar() {
-    var sidebar = document.getElementById("mySidebar");
-    var overlay = document.getElementById("overlay");
+const menuDrawer = document.getElementById('mySidebar');
+const menuButton = document.querySelector('.hamburger-menu');
+const menuOverlay = document.getElementById('overlay');
 
-    if (sidebar.style.width === '22vw') {
-        sidebar.style.width = '0';
-        sidebar.style.opacity = '0';
-        overlay.classList.remove('active');
-    } else {
-        sidebar.style.width = '22vw';
-        sidebar.style.opacity = '1';
-        overlay.classList.add('active');
-    }
+function setMenuOpen(open, restoreFocus = false) {
+    menuDrawer.classList.toggle('is-open', open);
+    menuDrawer.inert = !open;
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menuOverlay.classList.toggle('active', open);
+    if (!open && restoreFocus) menuButton.focus();
 }
 
-// Close the sidebar and overlay if the clicked target is outside
-document.addEventListener('click', function(event) {
-    var sidebar = document.getElementById("mySidebar");
-    var overlay = document.getElementById("overlay");
-    var hamburger = document.querySelector(".hamburger-menu");
+function toggleSidebar() {
+    setMenuOpen(!menuDrawer.classList.contains('is-open'));
+}
 
-    if (!sidebar.contains(event.target) && !hamburger.contains(event.target) && sidebar.style.width === '22vw') {
-        sidebar.style.width = '0';
-        sidebar.style.opacity = '0';
-        overlay.classList.remove('active');
-    }
-});
-
-// Prevent sidebar from closing when clicking inside
-document.getElementById("mySidebar").addEventListener('click', function(event) {
-    event.stopPropagation();
-});
+if (menuDrawer && menuButton && menuOverlay) {
+    menuButton.setAttribute('aria-controls', menuDrawer.id);
+    menuDrawer.setAttribute('aria-label', 'Menu');
+    menuDrawer.setAttribute('role', 'navigation');
+    setMenuOpen(false);
+    const currentPage = location.pathname.split('/').pop() || 'index.html';
+    menuDrawer.querySelectorAll('a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) link.setAttribute('aria-current', 'page');
+        link.addEventListener('click', () => setMenuOpen(false));
+    });
+    document.addEventListener('click', event => {
+        if (menuDrawer.classList.contains('is-open') && !menuDrawer.contains(event.target) && !menuButton.contains(event.target)) {
+            setMenuOpen(false, true);
+        }
+    });
+    document.addEventListener('keydown', event => {
+        if (!menuDrawer.classList.contains('is-open')) return;
+        if (event.key === 'Escape') setMenuOpen(false, true);
+        if (event.key === 'Tab') {
+            const controls = [menuButton, ...menuDrawer.querySelectorAll('a[href]')];
+            const index = controls.indexOf(document.activeElement);
+            event.preventDefault();
+            controls[(index + (event.shiftKey ? -1 : 1) + controls.length) % controls.length].focus();
+        }
+    });
+}

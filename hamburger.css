@@ -1,80 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
-
-/* Hamburger Menu Button */
+/* Fixed-size menu control, centered inside the navigation bar. */
 .hamburger-menu {
-  position: fixed;
-  top: 0.35%;
-  right: 0.5%;
-  z-index: 151;
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 5vh;
-  margin-top: 0.8vh;
-
-  height: 5vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around; /* Distributes spacing evenly */
-  align-items: center; /* Centers bars horizontally */
-  transition: 0.3s; /* Animation for hover effect */
-  border-radius: 12px;
-  padding: 1vh;
-  transform: scale(1);
+  position:fixed; top:14px; right:16px; z-index:151;
+  display:flex; align-items:center; justify-content:center;
+  width:44px; height:44px; margin:0; padding:0;
+  color:#d9dce2; background:transparent; border:1px solid transparent;
+  border-radius:8px; cursor:pointer;
+  transition:background .2s, border-color .2s;
 }
-
-.hamburger-menu:hover {
-  transition: 0.3s;
-  background-color: rgb(255, 210, 11);
-  padding-top: 6px;
-  padding-bottom: 6px;
-  transform: scale(1.075);
+.hamburger-menu:hover, .hamburger-menu:active {
+  background:#efbd6812; border-color:#efbd6844; transform:none; padding:0;
 }
-
-.hamburger-menu:active {
-  transition: 0.15s;
-  background-color: rgb(79, 17, 141);
-  padding: 12px;
-  transform: scale(0.9);
-}
-
 .hamburger-menu .bar {
-  width: 3vh; /* Increased width for wider bars */
-  height: 0.4vh;
-  background-color: #d3d3d3;  /* Color of the hamburger icon */
-  border-radius: 24px;
-  transition: 0.3s;
+  position:absolute; width:20px; height:2px; border-radius:2px;
+  background:currentColor; transition:transform .2s, opacity .2s;
 }
-
-/* Optional: Add hover effect */
-.hamburger-menu:hover .bar {
-  transition: 0.3s;
-  background-color: #000000;
-}
-
-/* Responsive design for hamburger menu */
-@media (max-width: 768px) {
-  .hamburger-menu {
-    width: 3.5vh;
-    height: 3.5vh;
-    padding: 0.8vh;
-  }
-  
-  .hamburger-menu .bar {
-    width: 2.5vh;
-    height: 0.35vh;
-  }
-}
-
-@media (max-width: 480px) {
-  .hamburger-menu {
-    width: 3vh;
-    height: 3vh;
-    padding: 0.7vh;
-  }
-  
-  .hamburger-menu .bar {
-    width: 2.5vh;
-    height: 0.5vh;
-  }
-}
+.hamburger-menu .bar:nth-child(1) { transform:translateY(-6px); }
+.hamburger-menu .bar:nth-child(3) { transform:translateY(6px); }
+.hamburger-menu[aria-expanded="true"] .bar:nth-child(1) { transform:rotate(45deg); }
+.hamburger-menu[aria-expanded="true"] .bar:nth-child(2) { opacity:0; }
+.hamburger-menu[aria-expanded="true"] .bar:nth-child(3) { transform:rotate(-45deg); }
+@media(max-width:760px) { .hamburger-menu { top:10px; right:8px; } }

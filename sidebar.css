@@ -1,53 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
-
-/* Sidebar Menu */
+/* Navigation drawer. Form confirmation styles remain below. */
 .sidebar {
-    height: 100%;
-    width: 0; /* Start with width 0 to keep the sidebar hidden */
-    position: fixed;
-    z-index: 150;
-    right: 0; /* Align to the right side of the screen */
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    opacity: 0;
-    transition: 0.3s ease-in-out; /* Smooth transition for opening and closing */
-    background-color: rgb(0, 0, 0);
-  }
-
-  /* Sidebar Content */
-  .sidebar-content {
-    position: fixed;
-    text-align: center;
-    letter-spacing: 0.05em;
-    font-family: "Arial";
-    top: 30%;
-  }
-
-  .sidebar-text a {
-    padding: 16px 4vw;
-    font-size: 1.5vw;
-    text-decoration: none;
-    display: block;
-    width:100%;
-    color:rgb(170, 170, 170);
-    transition: 0.3s;
-    transform: scale(1);
-    justify-content: center;
-    font-weight: bold;
-  }
-
-  .sidebar-text a:hover {
-    transition: 0.3s;
-    color: black;
-    background-color: rgb(255, 210, 11);
-    transform: scale(1);
-  }
-
-  .sidebar-text a:active {
-    transition: 0.15s;
-    transform: scale(1);
-    background-color: rgb(79, 17, 141);
-  }
-
+  position:fixed; inset:0 0 0 auto; z-index:150;
+  width:min(360px, calc(100vw - 24px)); height:100dvh;
+  overflow-y:auto; background:#171b20;
+  border-left:1px solid #343840; box-shadow:-16px 0 60px #0005;
+  transform:translateX(100%); visibility:hidden;
+  transition:transform .25s ease, visibility .25s;
+}
+.sidebar.is-open { transform:translateX(0); visibility:visible; }
+.sidebar-content { position:static; padding:88px 24px 32px; display:grid; gap:8px; text-align:left; font-family:inherit; letter-spacing:0; }
+.sidebar-content br { display:none; }
+.sidebar .sidebar-text a {
+  display:block; padding:13px 16px; border-radius:7px;
+  font-size:18px; font-weight:500; line-height:1.5;
+  color:#c6cbd4; text-decoration:none; transition:background .2s, color .2s;
+}
+.sidebar .sidebar-text a:hover { background:#ffffff08; color:#fff; }
+.sidebar .sidebar-text a[aria-current="page"] { background:#efbd6812; color:#efbd68; }
   .overlay {
     position: fixed;
     top: 0;
