@@ -42,6 +42,7 @@ function createCarouselSlide(item) {
     imageContainer.dataset.overlayImageSrc = item.overlayImageSrc;
     imageContainer.dataset.imageSrc = item.imageSrc;
     imageContainer.dataset.projectLink = item.projectLink;
+    imageContainer.dataset.projectLinkText = item.projectLinkText || '';
     imageContainer.dataset.genre = item.genre;
     imageContainer.dataset.role = item.role;
     imageContainer.dataset.engine = item.engine;
@@ -199,24 +200,35 @@ function updateActiveSlideDisplay(carouselId) {
 
         titleElement.textContent = title;
         descriptionElement.textContent = description;
-        imageOverlayElement.src = activeSlide.dataset.overlayImageSrc;
+        const iconSource = activeSlide.dataset.overlayImageSrc;
+        const hasIcon = Boolean(iconSource && iconSource !== 'undefined' && iconSource.trim());
+        if (hasIcon) imageOverlayElement.src = iconSource;
+        else imageOverlayElement.removeAttribute('src');
+        imageOverlayElement.style.display = hasIcon ? 'inline-block' : 'none';
         roleElement.textContent = formatProjectDetails(activeSlide.dataset);
 
         // add a link to the official project page
         const projectLink = activeSlide.dataset.projectLink;
-        if (hasProjectLink(projectLink)) {
+        const customText = activeSlide.dataset.projectLinkText.trim();
+        const linked = hasProjectLink(projectLink);
+        linkElement.classList.toggle('is-label', !linked);
+        if (linked) {
             linkElement.href = projectLink;
-            linkElement.textContent = getProjectLinkLabel(projectLink);
+            linkElement.target = '_blank';
+            linkElement.textContent = customText || getProjectLinkLabel(projectLink);
             linkElement.style.display = 'inline-block';
         } else {
             linkElement.removeAttribute('href');
-            linkElement.textContent = '';
-            linkElement.style.display = 'none';
+            linkElement.removeAttribute('target');
+            linkElement.textContent = customText;
+            linkElement.style.display = customText ? 'inline-block' : 'none';
         }
 
         // set the slide image based on whether we have a logo or background
         const screenshotList = JSON.parse(activeSlide.dataset.screenshots || '[]').filter(Boolean);
-        const initialHeroImage = screenshotList[0] || activeSlide.dataset.background || activeSlide.dataset.imageSrc;
+        const firstScreenshot = screenshotList[0];
+        const initialHeroImage = (typeof firstScreenshot === 'string' ? firstScreenshot : firstScreenshot?.src)
+            || activeSlide.dataset.background || activeSlide.dataset.imageSrc;
 
         if (initialHeroImage) {
             if (primaryHeroImage) primaryHeroImage.src = initialHeroImage;

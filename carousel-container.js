@@ -525,17 +525,7 @@ function updateActiveSlides(carouselId) {
             trailerButton.style.display = 'none';   
         }
 
-        // Disable the game text container if we have no link
-        const gameContainer = document.querySelector('.game-text-container');
-        const link = activeSlide.dataset.projectLink;
 
-        if (!link) {
-            gameContainer.querySelector('a').style.display = 'none';       // Hide the link
-            gameContainer.querySelector('img').style.display = 'none';     // Hide the image
-        } else {
-            gameContainer.querySelector('a').style.display = 'inline';     // Show the link if it exists
-            gameContainer.querySelector('img').style.display = 'inline';   // Show the image if it exists
-        }
     }
 
     updateActiveSlideDisplay(carouselId);
