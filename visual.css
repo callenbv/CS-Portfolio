@@ -9,11 +9,12 @@ body, body.fade-in {
 #navbar a:hover { background:#efbd6817; }
 .portfolio-hero { position:relative; isolation:isolate; padding-left:max(4vw, calc((100% - 1728px) / 2)); padding-right:max(4vw, calc((100% - 1728px) / 2)); }
 .portfolio-hero::before {
-  content:""; position:absolute; z-index:-1; inset:72px 0 0;
-  background:linear-gradient(90deg, #101215dd, #10121555 65%), url('Images/Screenshots/Earthward/EW4.png') center / cover;
+  content:""; position:absolute; z-index:-1; inset:70px 0 0; border-bottom:1px solid #efbd6811;
+  background:linear-gradient(90deg, #101215dd, #10121555 65%), url('Images/Screenshots/Earthward/EWHero.png') center / cover;
   background-position:center, center calc(50% - 100px);
   mask-image:linear-gradient(to top, transparent 0%, #00000026 10%, #00000080 22%, #000000d9 36%, #000 52%);
   opacity:.8; pointer-events:none;
+  background-repeat:no-repeat; background-size:cover; background-position:center;
 }
 .portfolio-hero h1 { text-shadow:0 4px 28px #0008; }
 .portfolio-hero .hero-summary { color:#d1d4dc; max-width:46ch; text-shadow:0 2px 8px #101215; }
